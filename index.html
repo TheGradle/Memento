@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
-<body>
+<body onload="RandomForms()">
   <div class="bootstrap-wrapper">
     <div class="row margin">
       <div class="col-12 bg-color bg-color_green">
         <div class="main">
           <h1 class="main--title">Пошук форми глаголу</h1>
-          <input type="text" class="main--input" placeholder="write" maxlength="16">
-          <button class="main--btn">Шукати</button>
+          <input type="text" class="main--input" placeholder="write" maxlength="16" id="input-search">
+          <button class="btn" id="btn-search">Шукати</button>
         </div>
       </div>
     </div>
@@ -24,13 +25,7 @@
       <div class="col-md-7 bg-color bg-color_bisque margin_bottom">
         <div class="content">
           <h2 class="content--title">Випадкові глаголи</h2>
-          <ul class="content-list">
-            <li>Write — Wrote — Written</li>
-            <li>Write — Wrote — Written</li>
-            <li>Write — Wrote — Written</li>
-            <li>Write — Wrote — Written</li>
-            <li>Write — Wrote — Written</li>
-          </ul>
+          <ul class="content-list" id="forms-list"></ul>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -42,9 +37,74 @@
             <li>Write — Wrote — Written</li>
             <li>Write — Wrote — Written</li>
           </ul>
+          <button class="btn">Вчити ще</button>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    var words = 
+    [
+      ["write", "wrote", "written"],
+      ["see", "saw", "saw"],
+      ["win", "won", "won"],
+      ["be", "was, were", "been"],
+      ["beat", "beat", "beaten"],
+      ["become", "became", "become"],
+      ["begin", "began", "begun"],
+      ["blow", "blew", "blown"],
+      ["break", "broke", "broken"]
+    ];
+
+    document.getElementById("btn-search").addEventListener("click", Search);
+
+    function Search()
+    {
+      var input_search = document.getElementById("input-search");
+      var temp_request = input_search.value;
+      input_search.value = input_search.value.replace(" ","");
+      
+      if(input_search.value != "")
+      {
+        for(var i = 0; i < words.length; i++)
+        {
+          if(words[i][0] == input_search.value)
+          {
+            input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
+          }
+        }
+
+        if(temp_request == input_search.value)
+        {
+          input_search.value = "Результатів: 0. Пишіть лише першу форму глаголу";
+        }
+      }
+    }
+
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function GetRandomForms() 
+    {
+      var rand = getRandomInt(0, words.length);
+      
+      return words[rand][0] + " — " + words[rand][1] + " — " + words[rand][2];
+    }
+
+    function RandomForms()
+    {
+      for(var i = 0; i < 5; i++)
+      {
+        var node = document.createElement("li");
+        var textnode = document.createTextNode(GetRandomForms());
+        node.appendChild(textnode);
+        
+        document.getElementById("forms-list").appendChild(node);
+      }
+    }
+  </script>
 </body>
 </html>
