@@ -34,8 +34,8 @@
           <h2 class="sidebar--title">Вивчайте глаголи</h2>
           <p class="sidebar--subtitle">Останні глаголи, які ви вивчили</p>
           <ul class="sidebar-list">
-            <li>Write — Wrote — Written</li>
-            <li>Write — Wrote — Written</li>
+            <li>break — broke — broken</li>
+            <li>blow — blew — blown</li>
           </ul>
           <button class="btn">Вчити ще</button>
         </div>
@@ -53,7 +53,45 @@
       ["become", "became", "become"],
       ["begin", "began", "begun"],
       ["blow", "blew", "blown"],
-      ["break", "broke", "broken"]
+      ["break", "broke", "broken"],
+      ["bring", "brought", "brought"],
+      ["build", "built", "built"],
+      ["burn", "burnt", "burnt"],
+      ["buy", "bought", "bought"],
+      ["catch", "caught", "caught"],
+      ["choose", "chose", "chosen"],
+      ["come", "came", "come"],
+      ["cost", "cost", "cost"],
+      ["cut", "cut", "cut"],
+      ["do", "did", "done"],
+      ["draw", "drew", "drawn"],
+      ["drink", "drank", "drunk"],
+      ["drive", "drove", "driven"],
+      ["eat", "ate", "eaten"],
+      ["fall", "fell", "fallen"],
+      ["fight", "fought", "fought"],
+      ["find", "found", "found"],
+      ["fly", "flew", "flown"],
+      ["forget", "forgot", "forgotten"],
+      ["get", "got", "got"],
+      ["give", "gave", "given"],
+      ["go", "went", "gone"],
+      ["grow", "grew", "grown"],
+      ["have", "had", "had"],
+      ["hear", "heard", "heard"],
+      ["hold", "held", "held"],
+      ["keep", "kept", "kept"],
+      ["know", "knew", "known"],
+      ["lead", "led", "led"],
+      ["learn", "learnt, learned", "learnt, learned"],
+      ["lend", "lent", "lent"],
+      ["let", "let", "let"],
+      ["light", "lit", "lit"],
+      ["lose", "lost", "lost"],
+      ["make", "made", "made"],
+      ["mean", "meant", "meant"],
+      ["meet", "met", "met"],
+      ["put", "put", "put"]
     ];
 
     document.getElementById("btn-search").addEventListener("click", Search);
@@ -68,7 +106,7 @@
       {
         for(var i = 0; i < words.length; i++)
         {
-          if(words[i][0] == input_search.value)
+          if(words[i][0] == input_search.value.toLowerCase())
           {
             input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
           }
@@ -76,7 +114,7 @@
 
         if(temp_request == input_search.value)
         {
-          input_search.value = "Результатів: 0. Пишіть лише першу форму глаголу";
+          input_search.value = "Не знайдено. Пишіть лише першу форму глаголу";
         }
       }
     }
