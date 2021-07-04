@@ -1,0 +1,17 @@
+.main {
+  margin-top: 60px;
+}
+
+.main-item {
+  margin-bottom: 30px;
+}
+
+.main-item--title {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.main-item-list {
+  font-size: 24px;
+  line-height: 1.3;
+}

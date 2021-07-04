@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список глаголів</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/verbs-list.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body onload="GetWords()">
+  <div class="wrap">
+    <div class="main">
+      <h1 class="main--title">Список глаголів</h1>
+      <div class="main-item">
+        <h2 class="main-item--title">Глаголи з трьома однаковими формами</h2>
+        <ul class="main-item-list" id="simple-words"></ul>
+      </div>
+      <div class="main-item">
+        <h2 class="main-item--title">Глаголи з двома однаковими формами</h2>
+        <ul class="main-item-list" id="middle-words"></ul>
+      </div>
+      <div class="main-item">
+        <h2 class="main-item--title">Інші глаголи</h2>
+        <ul class="main-item-list" id="hard-words"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/words.js"></script>
+  <script src="js/verbs-list.js"></script>
+</body>
+</html>
