@@ -8,6 +8,14 @@ document.getElementById("input-search").addEventListener("keyup", function(event
   }
 });
 
+document.getElementById("input-search").addEventListener("input", function() {
+  if(this.value == "")
+  {
+    document.getElementById("btn-search").innerHTML = "Шукати";
+    document.getElementById("btn-search").style.background = "transparent";
+  }
+});
+
 function Search()
 {
   var input_search = document.getElementById("input-search");
@@ -22,12 +30,15 @@ function Search()
       {
         input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
         isFound = true;
+        document.getElementById("btn-search").innerHTML = "Знайдено!";
+        document.getElementById("btn-search").style.background = "rgb(113, 227, 139)";
       }
     }
 
     if(!isFound)
     {
-      input_search.value = "Не знайдено";
+      document.getElementById("btn-search").innerHTML = "Не знайдено!";
+      document.getElementById("btn-search").style.background = "#fd9393";
     }
   }
 }
@@ -83,7 +94,7 @@ function GetMyWords()
 
   if(!isWords)
   {
-    document.getElementById("no-words").innerHTML = "Нещодавно ви не вчили слова";
+    document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
     document.getElementById("btn-learn").innerHTML = "Вчити";
   }
 }
