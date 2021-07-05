@@ -11,22 +11,23 @@ document.getElementById("input-search").addEventListener("keyup", function(event
 function Search()
 {
   var input_search = document.getElementById("input-search");
-  var temp_request = input_search.value;
-  input_search.value = input_search.value.replace(" ","");
+  var isFound = false;
+  input_search.value = input_search.value.replace(" ", "");
   
   if(input_search.value != "")
   {
     for(var i = 0; i < words.length; i++)
     {
-      if(words[i][0] == input_search.value.toLowerCase())
+      if(words[i][0] == input_search.value.toLowerCase() || words[i][1] == input_search.value.toLowerCase() || words[i][2] == input_search.value.toLowerCase())
       {
         input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
+        isFound = true;
       }
     }
 
-    if(temp_request == input_search.value)
+    if(!isFound)
     {
-      input_search.value = "Не знайдено. Пишіть лише першу форму глаголу";
+      input_search.value = "Не знайдено";
     }
   }
 }

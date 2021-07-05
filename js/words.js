@@ -58,7 +58,7 @@ var words =
   ["shine", "shone", "shone"],
   ["show", "showed", "shown"],
   ["shut", "shut", "shut"],
-  ["sing", "sang", "sung"]
+  ["sing", "sang", "sung"],
   ["sit", "sat", "sat"],
   ["sleep", "slept", "slept"],
   ["speak", "spoke", "spoken"],
