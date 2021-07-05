@@ -8,6 +8,7 @@ function GetMyWords()
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = i;
+    checkbox.checked = getCookie("unknown word " + i);
     
     li.appendChild(checkbox);
     li.appendChild(li_text);
@@ -24,9 +25,21 @@ function GetMyWords()
       document.getElementById("all-my-words").appendChild(li);
     }
   }
+
+  if(getCookie("cookie agree"))
+  {
+    document.getElementById("cookie-warning").style.display = "none";
+  }
 }
 
 document.getElementById("save-words").addEventListener("click", SaveWords);
+document.getElementById("cookie-check").addEventListener("click", CookieAgree);
+
+function CookieAgree()
+{
+  setCookie("cookie agree", true, 999999);
+  document.getElementById("cookie-warning").style.display = "none";
+}
 
 function SaveWords()
 {
