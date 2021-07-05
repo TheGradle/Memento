@@ -1,4 +1,5 @@
 document.getElementById("btn-search").addEventListener("click", Search);
+document.getElementById("cookie-check").addEventListener("click", CookieAgree);
 document.getElementById("input-search").addEventListener("keyup", function(event)
 {
   if (event.keyCode === 13)
@@ -43,10 +44,21 @@ function Search()
   }
 }
 
+function CookieAgree()
+{
+  setCookie("cookie agree", true, 999999);
+  document.getElementById("cookie-warning").style.display = "none";
+}
+
 function GetWords()
 {
   RandomForms();
   GetMyWords();
+
+  if(getCookie("cookie agree"))
+  {
+    document.getElementById("cookie-warning").style.display = "none";
+  }
 }
 
 function getRandomInt(min, max) {

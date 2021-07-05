@@ -12,7 +12,17 @@ function GetMyWords()
     li.appendChild(checkbox);
     li.appendChild(li_text);
 
-    document.getElementById("all-my-words").appendChild(li);
+    document.getElementById("all-words").appendChild(li);
+
+    if(getCookie("unknown word " + i))
+    {
+      document.getElementById("my-words-block").style.display = "block";
+      var li = document.createElement("li");
+      var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
+
+      li.appendChild(li_text);
+      document.getElementById("all-my-words").appendChild(li);
+    }
   }
 }
 
