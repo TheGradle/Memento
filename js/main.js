@@ -32,6 +32,12 @@ function Search()
   }
 }
 
+function GetWords()
+{
+  RandomForms();
+  GetMyWords();
+}
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -54,5 +60,30 @@ function RandomForms()
     node.appendChild(textnode);
     
     document.getElementById("forms-list").appendChild(node);
+  }
+}
+
+function GetMyWords()
+{
+  var number = 0;
+  var isWords = false;
+
+  for(var i = 0; i < words.length; i++)
+  {
+    if(getCookie("unknown word " + i) && number < 2)
+    {
+      var li = document.createElement("li");
+      var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
+      li.appendChild(li_text);
+      document.getElementById("my-words").appendChild(li);
+      number++;
+      isWords = true;
+    }
+  }
+
+  if(!isWords)
+  {
+    document.getElementById("no-words").innerHTML = "Нещодавно ви не вчили слова";
+    document.getElementById("btn-learn").innerHTML = "Вчити";
   }
 }

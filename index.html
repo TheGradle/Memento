@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
-<body onload="RandomForms()">
+<body onload="GetWords()">
   <div class="bootstrap-wrapper wrap">
     <div class="row margin">
       <div class="col-12 bg-color bg-color_green">
@@ -34,17 +34,15 @@
       <div class="col-md-4 bg-color bg-color_gold margin_bottom">
         <div class="sidebar">
           <h2 class="sidebar--title">Вивчайте глаголи</h2>
-          <p class="sidebar--subtitle">Останні глаголи, які ви вивчили</p>
-          <ul class="sidebar-list">
-            <li>break — broke — broken</li>
-            <li>blow — blew — blown</li>
-          </ul>
-          <button class="btn">Вчити ще</button>
+          <p class="sidebar--subtitle" id="no-words">Останні глаголи, які ви вивчили</p>
+          <ul class="sidebar-list" id="my-words"></ul>
+          <a href="learn.html"><button class="btn" href="#" id="btn-learn">Вчити ще</button></a>
         </div>
       </div>
     </div>
   </div>
   <script src="js/words.js"></script>
+  <script src="js/cookies.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
