@@ -45,6 +45,11 @@ function SaveWords()
 {
   for(var i = 0; i < words.length; i++)
   {
+    if(getCookie("unknown word " + i))
+    {
+      eraseCookie("unknown word " + i);
+    }
+    
     var checkbox = document.getElementById(i);
     
     if(checkbox.checked)
