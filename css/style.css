@@ -47,6 +47,11 @@ body {
   font-weight: 600;
 }
 
+.main--title a {
+  text-decoration: none;
+  color: #000;
+}
+
 .main--input {
   width: 100%;
   height: 50px;

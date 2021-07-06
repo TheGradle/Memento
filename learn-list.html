@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вивчення глаголів</title>
+  <title>Вивчайте глаголи</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -12,23 +12,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
-<body onload="LearnMyWords()">
+<body onload="GetMyWords()">
   <div class="wrap">
     <div class="warning margin row" id="cookie-warning" style="display: none;">
       <p class="warning--text">Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
       <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
     <div class="main">
-      <h1 class="main--title"><a href="learn-list.html">←</a> Вивчення глаголів (<span id="quiz-number"></span>)</h1>
+      <h1 class="main--title"><a href="index.html">←</a> Вивчайте глаголи</h1>
+      <div class="main-item" style="display: none;" id="my-words-block">
+        <h2 class="main-item--title">Глаголи які ви вивчаєте</h2>
+        <ul class="main-item-list" id="all-my-words"></ul>
+        <a href="learn.html"><button class="btn" id="learn-words">Вчити</button></a>
+      </div>
       <div class="main-item">
-        <h2 class="main-item--title">Напишіть всі форми глаголу <span id="quiz-word" style="font-weight: 600;"></span></h2>
-        <input type="text" class="main--input" placeholder="word - word - word" id="user-answer">
-        <button class="btn" id="give-answer">Відповісти</button>
+        <h2 class="main-item--title">Оберіть глаголи, які ви не знаєте</h2>
+        <ul class="main-item-list" id="all-words"></ul>
+        <button class="btn" id="save-words">Зберігти</button>
       </div>
     </div>
   </div>
   <script src="js/words.js"></script>
   <script src="js/cookies.js"></script>
-  <script src="js/learn.js"></script>
+  <script src="js/learn-list.js"></script>
 </body>
 </html>

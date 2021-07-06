@@ -1,39 +1,39 @@
-function GetMyWords()
+var unknown_words = [];
+var user_answers = [];
+var span_number = document.getElementById("quiz-number");
+var span_word = document.getElementById("quiz-word");
+var user_answer = document.getElementById("user-answer");
+var current_word = 1;
+
+function LearnMyWords()
 {
   for(var i = 0; i < words.length; i++)
   {
-    var li = document.createElement("li");
-    var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
-
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = i;
-    checkbox.checked = getCookie("unknown word " + i);
-    
-    li.appendChild(checkbox);
-    li.appendChild(li_text);
-
-    document.getElementById("all-words").appendChild(li);
-
     if(getCookie("unknown word " + i))
     {
-      document.getElementById("my-words-block").style.display = "block";
-      var li = document.createElement("li");
-      var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
-
-      li.appendChild(li_text);
-      document.getElementById("all-my-words").appendChild(li);
+      unknown_words.push(i);
     }
   }
 
-  if(getCookie("cookie agree"))
+  span_number.innerHTML = current_word + "/" + unknown_words.length;
+  span_word.innerHTML = words[current_word][0];
+
+  if(!getCookie("cookie agree"))
   {
-    document.getElementById("cookie-warning").style.display = "none";
+    document.getElementById("cookie-warning").style.display = "block";
   }
 }
 
-document.getElementById("save-words").addEventListener("click", SaveWords);
+document.getElementById("give-answer").addEventListener("click", GiveAnswer);
 document.getElementById("cookie-check").addEventListener("click", CookieAgree);
+document.getElementById("user-answer").addEventListener("keyup", function(event)
+{
+  if (event.keyCode === 13)
+  {
+    event.preventDefault();
+    document.getElementById("give-answer").click();
+  }
+});
 
 function CookieAgree()
 {
@@ -41,23 +41,21 @@ function CookieAgree()
   document.getElementById("cookie-warning").style.display = "none";
 }
 
-function SaveWords()
+function GiveAnswer()
 {
-  for(var i = 0; i < words.length; i++)
+  if(current_word <= unknown_words.length)
   {
-    if(getCookie("unknown word " + i))
+    span_number.innerHTML = ++current_word + "/" + unknown_words.length;
+    span_word.innerHTML = words[current_word][0];
+    user_answers.push(user_answer.value);
+    user_answer.value = "";
+  }
+
+  if(user_answers.length == unknown_words.length)
+  {
+    for(var i = 0; i < user_answers.length; i++)
     {
-      eraseCookie("unknown word " + i);
-    }
-    
-    var checkbox = document.getElementById(i);
-    
-    if(checkbox.checked)
-    {
-      setCookie("unknown word " + i, words[i], 7);
-      console.log(true);
+      console.log(user_answers[i] == (words[unknown_words[i]][0] + " - " + words[unknown_words[i]][1] + " - " + words[unknown_words[i]][2]));
     }
   }
-  window.scrollTo(0, 0);
-  location.reload();
 }
