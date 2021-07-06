@@ -1,4 +1,4 @@
-function GetMyWords()
+document.addEventListener("DOMContentLoaded", function()
 {
   for(var i = 0; i < words.length; i++)
   {
@@ -12,36 +12,24 @@ function GetMyWords()
     
     li.appendChild(checkbox);
     li.appendChild(li_text);
-
+    
     document.getElementById("all-words").appendChild(li);
 
     if(getCookie("unknown word " + i))
     {
       document.getElementById("my-words-block").style.display = "block";
+      
       var li = document.createElement("li");
       var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
 
       li.appendChild(li_text);
+
       document.getElementById("all-my-words").appendChild(li);
     }
   }
+}, false);
 
-  if(!getCookie("cookie agree"))
-  {
-    document.getElementById("cookie-warning").style.display = "block";
-  }
-}
-
-document.getElementById("save-words").addEventListener("click", SaveWords);
-document.getElementById("cookie-check").addEventListener("click", CookieAgree);
-
-function CookieAgree()
-{
-  setCookie("cookie agree", true, 999999);
-  document.getElementById("cookie-warning").style.display = "none";
-}
-
-function SaveWords()
+document.getElementById("save-words").addEventListener("click", function()
 {
   for(var i = 0; i < words.length; i++)
   {
@@ -60,4 +48,4 @@ function SaveWords()
   }
   window.scrollTo(0, 0);
   location.reload();
-}
+});

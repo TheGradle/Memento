@@ -1,25 +1,53 @@
-document.getElementById("btn-search").addEventListener("click", Search);
-document.getElementById("cookie-check").addEventListener("click", CookieAgree);
-document.getElementById("input-search").addEventListener("keyup", function(event)
-{
-  if (event.keyCode === 13)
-  {
-    event.preventDefault();
-    document.getElementById("btn-search").click();
-  }
-});
+var btn_search = document.getElementById("btn-search");
+var input_search = document.getElementById("input-search");
 
-document.getElementById("input-search").addEventListener("input", function() {
-  if(this.value == "")
-  {
-    document.getElementById("btn-search").innerHTML = "Шукати";
-    document.getElementById("btn-search").style.background = "transparent";
-  }
-});
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
-function Search()
+function GetRandomForms() 
 {
-  var input_search = document.getElementById("input-search");
+  var rand = getRandomInt(0, words.length);
+  return words[rand][0] + " — " + words[rand][1] + " — " + words[rand][2];
+}
+
+document.addEventListener("DOMContentLoaded", function()
+{
+  for(var i = 0; i < 5; i++)
+  {
+    var li = document.createElement("li");
+    var li_text = document.createTextNode(GetRandomForms());
+    li.appendChild(li_text);
+    
+    document.getElementById("forms-list").appendChild(li);
+  }
+
+  var number = 0;
+
+  for(var i = 0; i < words.length; i++)
+  {
+    if(getCookie("unknown word " + i) && number < 2)
+    {
+      var li = document.createElement("li");
+      var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
+      li.appendChild(li_text);
+
+      document.getElementById("my-words").appendChild(li);
+      number++;
+    }
+  }
+
+  if(!number)
+  {
+    document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
+    document.getElementById("btn-learn").innerHTML = "Вчити";
+  }
+}, false);
+
+btn_search.addEventListener("click", function()
+{
   var isFound = false;
   input_search.value = input_search.value.replace(" ", "");
   
@@ -31,82 +59,32 @@ function Search()
       {
         input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
         isFound = true;
-        document.getElementById("btn-search").innerHTML = "Знайдено!";
-        document.getElementById("btn-search").style.background = "rgb(113, 227, 139)";
+        btn_search.innerHTML = "Знайдено!";
+        btn_search.style.background = "#71e38b";
       }
     }
 
     if(!isFound)
     {
-      document.getElementById("btn-search").innerHTML = "Не знайдено!";
-      document.getElementById("btn-search").style.background = "#fd9393";
+      btn_search.innerHTML = "Не знайдено!";
+      btn_search.style.background = "#fd9393";
     }
   }
-}
+});
 
-function CookieAgree()
+input_search.addEventListener("keyup", function(event)
 {
-  setCookie("cookie agree", true, 999999);
-  document.getElementById("cookie-warning").style.display = "none";
-}
-
-function GetWords()
-{
-  RandomForms();
-  GetMyWords();
-
-  if(!getCookie("cookie agree"))
+  if (event.keyCode === 13)
   {
-    document.getElementById("cookie-warning").style.display = "block";
+    event.preventDefault();
+    btn_search.click();
   }
-}
+});
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-function GetRandomForms() 
-{
-  var rand = getRandomInt(0, words.length);
-  
-  return words[rand][0] + " — " + words[rand][1] + " — " + words[rand][2];
-}
-
-function RandomForms()
-{
-  for(var i = 0; i < 5; i++)
+input_search.addEventListener("input", function() {
+  if(this.value == "")
   {
-    var node = document.createElement("li");
-    var textnode = document.createTextNode(GetRandomForms());
-    node.appendChild(textnode);
-    
-    document.getElementById("forms-list").appendChild(node);
+    btn_search.innerHTML = "Шукати";
+    btn_search.style.background = "transparent";
   }
-}
-
-function GetMyWords()
-{
-  var number = 0;
-  var isWords = false;
-
-  for(var i = 0; i < words.length; i++)
-  {
-    if(getCookie("unknown word " + i) && number < 2)
-    {
-      var li = document.createElement("li");
-      var li_text = document.createTextNode(words[i][0] + " — " + words[i][1] + " — " + words[i][2]);
-      li.appendChild(li_text);
-      document.getElementById("my-words").appendChild(li);
-      number++;
-      isWords = true;
-    }
-  }
-
-  if(!isWords)
-  {
-    document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
-    document.getElementById("btn-learn").innerHTML = "Вчити";
-  }
-}
+});
