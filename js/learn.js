@@ -50,6 +50,9 @@ function SaveWords()
     if(checkbox.checked)
     {
       setCookie("unknown word " + i, words[i], 7);
+      console.log(true);
     }
   }
+  window.scrollTo(0, 0);
+  location.reload();
 }

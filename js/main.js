@@ -55,9 +55,9 @@ function GetWords()
   RandomForms();
   GetMyWords();
 
-  if(getCookie("cookie agree"))
+  if(!getCookie("cookie agree"))
   {
-    document.getElementById("cookie-warning").style.display = "none";
+    document.getElementById("cookie-warning").style.display = "block";
   }
 }
 

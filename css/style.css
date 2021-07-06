@@ -71,6 +71,16 @@ body {
   color: #fff;
 }
 
+.btn:disabled {
+  color: #9b9b9b;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  background: transparent;
+  color: #9b9b9b;
+}
+
 .content--title {
   font-size: 42px;
   font-weight: 600;
