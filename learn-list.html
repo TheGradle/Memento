@@ -8,26 +8,25 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/verbs-list.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
   <div class="wrap">
-    <div class="warning margin row" id="cookie-warning" style="display: none;">
-      <p class="warning--text">Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
+    <div class="bg-color bg-color_cyan m-t row" id="cookie-warning" style="display: none;">
+      <p>Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
       <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
-    <div class="main">
-      <h1 class="main--title"><a href="index.html">←</a> Вивчайте глаголи</h1>
-      <div class="main-item" style="display: none;" id="my-words-block">
-        <h2 class="main-item--title">Глаголи які ви вивчаєте</h2>
-        <ul class="main-item-list" id="all-my-words"></ul>
+    <div class="main m-t-60">
+      <h1 class="title"><a href="index.html">←</a> Вивчайте глаголи</h1>
+      <div class="main-item m-b" style="display: none;" id="my-words-block">
+        <h2 class="title">Глаголи які ви вивчаєте</h2>
+        <ul class="list" id="all-my-words"></ul>
         <a href="learn.html"><button class="btn" id="learn-words">Вчити</button></a>
       </div>
-      <div class="main-item">
-        <h2 class="main-item--title">Оберіть глаголи, які ви не знаєте</h2>
-        <ul class="main-item-list" id="all-words"></ul>
+      <div class="main-item m-b">
+        <h2 class="title">Оберіть глаголи, які ви не знаєте</h2>
+        <ul class="list" id="all-words"></ul>
         <button class="btn" id="save-words">Зберігти</button>
       </div>
     </div>

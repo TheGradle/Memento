@@ -13,21 +13,21 @@
 </head>
 <body>
   <div class="bootstrap-wrapper wrap">
-    <div class="row margin">
+    <div class="row m-t">
       <div class="col-12 bg-color bg-color_green">
         <div class="main">
-          <h1 class="main--title">Пошук форми глаголу</h1>
-          <input type="text" class="main--input" placeholder="write" maxlength="16" id="input-search">
+          <h1 class="title">Пошук форми глаголу</h1>
+          <input type="text" class="input" placeholder="write" maxlength="16" id="input-search">
           <button class="btn" id="btn-search">Шукати</button>
         </div>
       </div>
     </div>
-    <div class="warning margin row" id="cookie-warning" style="display: none;">
-      <p class="warning--text">Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
+    <div class="bg-color bg-color_cyan m-t row" id="cookie-warning" style="display: none;">
+      <p>Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
       <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
-    <div class="row margin">
-      <div class="col-md-7 bg-color bg-color_bisque margin_bottom">
+    <div class="row m-t">
+      <div class="col-md-7 bg-color bg-color_bisque m-b">
         <div class="content">
           <h2 class="content--title">Випадкові глаголи</h2>
           <ul class="content-list" id="forms-list"></ul>
@@ -35,12 +35,12 @@
         </div>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-4 bg-color bg-color_gold margin_bottom">
+      <div class="col-md-4 bg-color bg-color_gold m-b">
         <div class="sidebar">
           <h2 class="sidebar--title">Вивчайте глаголи</h2>
           <p class="sidebar--subtitle" id="no-words">Нещодавні глаголи:</p>
           <ul class="sidebar-list" id="my-words"></ul>
-          <a href="learn-list.html"><button class="btn" href="#" id="btn-learn">Вчити ще</button></a>
+          <a href="learn-list.html"><button class="btn" id="btn-learn">Вчити ще</button></a>
         </div>
       </div>
     </div>
