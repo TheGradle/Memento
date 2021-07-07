@@ -115,6 +115,8 @@ h2.title {
   background-color: #caffff;;
 }
 
+/* index.html styles */
+
 .content--title {
   font-size: 42px;
   font-weight: 600;
@@ -144,8 +146,10 @@ h2.title {
   margin-bottom: 10px;
 }
 
+/* adaptive */
+
 @media screen and (max-width: 768px) {
-  .main--title {
+  .title {
     font-size: 42px;
   }
 

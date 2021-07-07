@@ -16,16 +16,10 @@ function LearnMyWords()
   }
 
   span_number.innerHTML = current_word + "/" + unknown_words.length;
-  span_word.innerHTML = words[current_word][0];
-
-  if(!getCookie("cookie agree"))
-  {
-    document.getElementById("cookie-warning").style.display = "block";
-  }
+  span_word.innerHTML = words[unknown_words[0]][0];
 }
 
 document.getElementById("give-answer").addEventListener("click", GiveAnswer);
-document.getElementById("cookie-check").addEventListener("click", CookieAgree);
 document.getElementById("user-answer").addEventListener("keyup", function(event)
 {
   if (event.keyCode === 13)
@@ -35,27 +29,50 @@ document.getElementById("user-answer").addEventListener("keyup", function(event)
   }
 });
 
-function CookieAgree()
-{
-  setCookie("cookie agree", true, 999999);
-  document.getElementById("cookie-warning").style.display = "none";
-}
-
 function GiveAnswer()
 {
-  if(current_word <= unknown_words.length)
+  if(user_answers.length < unknown_words.length)
   {
-    span_number.innerHTML = ++current_word + "/" + unknown_words.length;
+    span_number.innerHTML = current_word + "/" + unknown_words.length;
     span_word.innerHTML = words[current_word][0];
     user_answers.push(user_answer.value);
     user_answer.value = "";
+
+    current_word += (current_word < unknown_words.length);
   }
+
+  var count_of_right = 0;
+  var incorect = [];
 
   if(user_answers.length == unknown_words.length)
   {
     for(var i = 0; i < user_answers.length; i++)
     {
-      console.log(user_answers[i] == (words[unknown_words[i]][0] + " - " + words[unknown_words[i]][1] + " - " + words[unknown_words[i]][2]));
+      if(user_answers[i] == (words[unknown_words[i]][0] + " - " + words[unknown_words[i]][1] + " - " + words[unknown_words[i]][2]))
+      {
+        count_of_right++;
+      }
+      else
+      {
+        incorect.push(i);
+      }
     }
+
+    if(incorect.length)
+    {
+      var answer = "Результат: " + count_of_right + "/" + unknown_words.length + "\n\nПомилки:\n";
+      
+      for(var i = 0; i < incorect.length; i++)
+      {
+        answer += user_answers[incorect[i]] + " (" + words[incorect[i]][0] + " - " + words[incorect[i]][1] + " - " + words[incorect[i]][2] + ")\n"; 
+      }
+
+      alert(answer);
+    }
+    else{
+      alert("Результат: " + count_of_right + "/" + unknown_words.length);
+    }
+    
+    document.location.href = "learn-list.html";
   }
 }
