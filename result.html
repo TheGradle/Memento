@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вивчайте глаголи</title>
+  <title>Результат</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -17,22 +17,15 @@
       <p>Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
       <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
-    <div class="main m-t-60">
-      <h1 class="title"><a href="index.html">←</a> Вивчайте глаголи</h1>
-      <div class="main-item m-b" style="display: none;" id="my-words-block">
-        <h2 class="title">Глаголи які ви вивчаєте</h2>
-        <ul class="list" id="all-my-words"></ul>
-        <a href="learn.html"><button class="btn" id="learn-words">Вчити</button></a>
-      </div>
-      <div class="main-item m-b">
-        <h2 class="title">Оберіть глаголи, які ви не знаєте</h2>
-        <ul class="list" id="all-words"></ul>
-        <button class="btn" id="save-words">Зберегти</button>
-      </div>
+    <div class="bg-color bg-color_bisque m-t row t-c">
+      <h1 class="title" id="error-title">🎉 Результат</h1>
+      <h2 class="title" id="error-subtitle"><span id="answers"></span> правильних відповідей</h2>
+      <ul class="list c-r" style="display: none;" id="mistakes"></ul>
+      <a href="learn-list.html"><button class="btn">Добре</button></a>
     </div>
   </div>
   <script src="js/words.js"></script>
   <script src="js/cookies.js"></script>
-  <script src="js/learn-list.js"></script>
+  <script src="js/result.js"></script>
 </body>
 </html>

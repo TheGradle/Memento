@@ -19,4 +19,4 @@ document.addEventListener("DOMContentLoaded", function()
       document.getElementById("hard-words").appendChild(li);
     }
   }
-}, false);
+});

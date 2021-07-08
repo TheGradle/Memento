@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function()
     document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
     document.getElementById("btn-learn").innerHTML = "Вчити";
   }
-}, false);
+});
 
 btn_search.addEventListener("click", function()
 {

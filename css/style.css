@@ -30,6 +30,14 @@ body {
   margin-bottom: 30px;
 }
 
+.t-c {
+  text-align: center;
+}
+
+.c-r {
+  color: red;
+}
+
 h1.title {
   font-size: 52px;
   margin-bottom: 35px;

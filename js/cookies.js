@@ -44,4 +44,4 @@ document.addEventListener("DOMContentLoaded", function()
   {
     document.getElementById("cookie-warning").style.display = "block";
   }
-}, false);
+});
