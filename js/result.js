@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function()
   }
   else
   {
-    document.getElementById("error-title").innerHTML = "⛔️ Помилка";
-    document.getElementById("error-subtitle").innerHTML = "Немає даних про відповіді";
+    document.location = "error.html";
   }
 });

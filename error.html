@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Результат</title>
+  <title>Помилка</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -13,19 +13,16 @@
 </head>
 <body>
   <div class="wrap">
+    <div class="bg-color bg-color_bisque m-t row t-c">
+      <h1 class="title">⛔️ Помилка</h1>
+      <h2 class="title">Немає даних</h2>
+      <a href="learn-list.html"><button class="btn">Добре</button></a>
+    </div>
     <div class="bg-color bg-color_cyan m-t row" id="cookie-warning" style="display: none;">
       <p>Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
       <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
-    <div class="bg-color bg-color_bisque m-t row t-c">
-      <h1 class="title">🎉 Результат</h1>
-      <h2 class="title"><span id="answers"></span> правильних відповідей</h2>
-      <ul class="list c-r" style="display: none;" id="mistakes"></ul>
-      <a href="learn-list.html"><button class="btn">Добре</button></a>
-    </div>
   </div>
-  <script src="js/words.js"></script>
   <script src="js/cookies.js"></script>
-  <script src="js/result.js"></script>
 </body>
 </html>

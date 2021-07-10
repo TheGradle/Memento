@@ -5,6 +5,7 @@ var unknown_words = [];
 var user_answers = [];
 var current_word = 1;
 var current_index = 0;
+var error = true;
 
 document.addEventListener("DOMContentLoaded", function()
 {
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function()
     if(getCookie("unknown word " + i))
     {
       unknown_words.push(i);
+      error = false;
     }
   }
 
@@ -20,11 +22,15 @@ document.addEventListener("DOMContentLoaded", function()
   span_word.innerHTML = words[unknown_words[current_index]][0];
 });
 
+if(error)
+{
+  document.location = "error.html";
+}
+
 document.getElementById("give-answer").addEventListener("click", function()
 {
   if(user_answers.length < unknown_words.length)
   {
-    
     current_index += (current_index < unknown_words.length - 1);
     span_word.innerHTML = words[unknown_words[current_index]][0];
     user_answers.push(input_answer.value);
