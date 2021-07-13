@@ -19,4 +19,6 @@ document.addEventListener("DOMContentLoaded", function()
       document.getElementById("hard-words").appendChild(li);
     }
   }
+
+  document.getElementById("words-number").innerHTML = words.length;
 });
