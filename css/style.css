@@ -49,6 +49,11 @@ h1.title a {
   color: #000;
 }
 
+h1.title img {
+  height: 55px;
+  vertical-align: sub;
+}
+
 h2.title {
   font-size: 32px;
   margin-bottom: 15px;
@@ -267,6 +272,10 @@ header nav {
   h2.title {
     font-size: 26px;
     margin-bottom: 15px;
+  }
+
+  h2.title img {
+    height: 30px;
   }
 
   .content--title {

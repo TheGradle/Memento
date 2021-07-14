@@ -1,0 +1,30 @@
+header nav, 
+footer,
+#cookie-warning,
+h1.title img,
+h2.title img,
+.btn {
+  display: none!important;
+}
+
+.bg-color {
+  border: 2px solid #000;
+  padding: 30px!important;
+}
+
+h1.title {
+  font-size: 32px;
+}
+
+h2.title {
+  font-size: 21px;
+}
+
+.list {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.m-t-60 {
+  margin-top: 30px;
+}
