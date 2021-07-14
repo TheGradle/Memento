@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function()
 
   if(!number)
   {
-    document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
+    document.getElementById("no-words").innerHTML = "<img src=\"img/emoji/unamused-face.png\" alt=\"\"> Останнім часом ви не вчили глаголи";
     document.getElementById("btn-learn").innerHTML = "Вчити";
   }
 });

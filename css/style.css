@@ -54,6 +54,11 @@ h2.title {
   margin-bottom: 15px;
 }
 
+h2.title img {
+  height: 40px;
+  vertical-align: sub;
+}
+
 .input {
   width: 100%;
   height: 50px;
@@ -102,6 +107,58 @@ h2.title {
   height: 18px;
   margin-right: 12px;
   vertical-align: middle;
+}
+
+p img {
+  width: 25px;
+  vertical-align: bottom;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo--title {
+  font-size: 36px;
+}
+
+.header-logo--title a {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-logo--subtitle {
+  text-align: center;
+  margin-top: 5px;
+}
+
+header nav {
+  align-items: center;
+  min-width: 450px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav--link {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav--link:hover {
+  text-decoration: underline;
+}
+
+.nav--link_disabled {
+  cursor: pointer;
+  color: #cecece;
+}
+
+.nav--link_disabled:hover {
+  text-decoration: none;
 }
 
 /* cards */
@@ -167,6 +224,25 @@ h2.title {
 
   .sidebar--title {
     font-size: 28px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 519px) {
+  header nav {
+    display: none;
+    margin-top: none;
+  }
+
+  header {
+    flex-direction: row;
   }
 }
 

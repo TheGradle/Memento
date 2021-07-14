@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вивчайте глаголи</title>
+  <title>Memento — Вивчайте глаголи</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -13,19 +13,31 @@
 </head>
 <body>
   <div class="wrap">
+    <header class="m-t">
+      <div class="header-logo">
+        <h1 class="header-logo--title"><a href="index.html">Memento</a></h1>
+        <p class="header-logo--subtitle">Спосіб пам’ятати</p>
+      </div>
+      <nav>
+        <a href="index.html" class="nav--link">Головна</a>
+        <a href="verbs-list.html" class="nav--link">Всі глаголи</a>
+        <a href="learn-list.html" class="nav--link">Вчити глаголи</a>
+        <p href="test.html" class="nav--link nav--link_disabled">Тест</p>
+      </nav>
+    </header>
     <div class="main m-t-60">
-      <h1 class="title"><a href="index.html">←</a> Вивчайте глаголи</h1>
+      <h1 class="title">Вивчайте глаголи</h1>
       <div class="bg-color bg-color_cyan m-t m-b row" id="cookie-warning" style="display: none;">
-        <p>Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
+        <p><img src="img/emoji/cookie.png" alt=""> Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
         <button class="btn" id="cookie-check">Зрозуміло</button>
       </div>
       <div class="main-item m-b" style="display: none;" id="my-words-block">
-        <h2 class="title">Глаголи які ви вивчаєте</h2>
+        <h2 class="title"><img src="img/emoji/smiling-face-with-sunglasses.png" alt=""> Глаголи які ви вивчаєте</h2>
         <ul class="list" id="all-my-words"></ul>
         <a href="learn.html"><button class="btn" id="learn-words">Вчити</button></a>
       </div>
       <div class="main-item m-b">
-        <h2 class="title">Оберіть глаголи, які ви не знаєте</h2>
+        <h2 class="title"><img src="img/emoji/thinking-face.png" alt=""> Оберіть глаголи, які ви не знаєте</h2>
         <ul class="list" id="all-words"></ul>
         <button class="btn" id="save-words">Зберегти</button>
       </div>
