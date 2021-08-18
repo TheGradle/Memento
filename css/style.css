@@ -44,6 +44,10 @@ h1.title {
   font-weight: 600;
 }
 
+h1.title_wm {
+  margin-bottom: 0;
+}
+
 h1.title a {
   text-decoration: none;
   color: #000;
@@ -143,7 +147,7 @@ header {
 
 header nav {
   align-items: center;
-  min-width: 450px;
+  min-width: 500px;
   display: flex;
   justify-content: space-between;
 }
