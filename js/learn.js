@@ -50,7 +50,7 @@ document.getElementById("give-answer").addEventListener("click", function()
   {
     for(var i = 0; i < user_answers.length; i++)
     {
-      if(user_answers[i] == (words[unknown_words[i]][0] + " - " + words[unknown_words[i]][1] + " - " + words[unknown_words[i]][2]))
+      if(user_answers[i].toLowerCase() == (words[unknown_words[i]][0] + " - " + words[unknown_words[i]][1] + " - " + words[unknown_words[i]][2]))
       {
         count_of_right++;
       }
