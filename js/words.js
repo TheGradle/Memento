@@ -1,7 +1,7 @@
 var words = 
 [
   ["write", "wrote", "written"],
-  ["see", "saw", "saw"],
+  ["see", "saw", "seen"],
   ["win", "won", "won"],
   ["be", "was, were", "been"],
   ["beat", "beat", "beaten"],
