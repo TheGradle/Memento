@@ -13,8 +13,14 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
+  <nav class="mobile" id="nav-menu">
+    <a href="index.html" class="nav--link">Головна</a>
+    <a href="verbs-list.html" class="nav--link">Всі глаголи</a>
+    <a href="learn-list.html" class="nav--link">Вчити глаголи</a>
+    <a href="test.html" class="nav--link">Тест (beta)</a>
+  </nav>
   <div class="wrap">
-    <header class="m-t">
+    <header class="m-t" id="header">
       <div class="header-logo">
         <h1 class="header-logo--title"><a href="index.html">Memento</a></h1>
         <p class="header-logo--subtitle">Спосіб пам’ятати</p>
@@ -25,6 +31,14 @@
         <a href="learn-list.html" class="nav--link">Вчити глаголи</a>
         <a href="test.html" class="nav--link">Тест (beta)</a>
       </nav>
+      <div class="nav-icon" id="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
     <div class="bg-color bg-color_cyan m-t row" id="cookie-warning" style="display: none;">
       <p><img src="img/emoji/cookie.png" alt=""> Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
@@ -43,5 +57,6 @@
   <script src="js/words.js"></script>
   <script src="js/cookies.js"></script>
   <script src="js/result.js"></script>
+  <script src="js/hamburger-menu.js"></script>
 </body>
 </html>
